@@ -7,6 +7,9 @@ import javax.swing.*;
 import java.io.File;
 import java.util.ArrayList;
 
+import java.lang.Class;
+import java.lang.reflect.Constructor;
+
 /**
  * Bildbetrachter ist die Hauptklasse der Bildbetrachter-Anwendung. Sie
  * erstellt die GUI der Anwendung, zeigt sie an und initialisiert alle
@@ -200,39 +203,51 @@ public class Bildbetrachter
         // Das Filter-Menü erzeugen
         menue = new JMenu("Filter");
         menuezeile.add(menue);
-                    
-        eintrag = new JMenuItem("Dunkler");
-        eintrag.addActionListener(new ActionListener() {
-                            public void actionPerformed(ActionEvent e) { 
-                               DunkelFilter a = new DunkelFilter(aktuellesBild);
-                               a.anwenden();
-                               fenster.repaint();
-                            }
-                       });
-         menue.add(eintrag);
-
-        eintrag = new JMenuItem("Heller");
-        eintrag.addActionListener(new ActionListener() {
-                            public void actionPerformed(ActionEvent e) { 
-                            	
-                            	AufhellenFilter x = new AufhellenFilter(aktuellesBild);
-                            	x.anwenden();
-                            	fenster.repaint();
-                      
-                            }
-                       });
-         menue.add(eintrag);
-
-        eintrag = new JMenuItem("Schwellwert");
-        eintrag.addActionListener(new ActionListener() {
-                            public void actionPerformed(ActionEvent e) { 
-                                SchwellwertFilter b = new SchwellwertFilter(aktuellesBild);
-                                b.anwenden();
-                                fenster.repaint();
-                            }
-                       });
-         menue.add(eintrag);
-
+        File file = new File("/Users/kristoffer/Documents/blatt7/bin");
+        String[] classes = file.list();
         
+        for (String st: classes) {
+        	final String[] x = st.split("\\.");
+        	if (x[0].contains("Filter") && !x[0].equals("IFilter")) {
+        		if (x[1].equals("class")) {
+        			String[] y = x[0].split("Filter");
+        			eintrag = new JMenuItem(y[0]);
+        			eintrag.addActionListener(new ActionListener() {
+        				public void actionPerformed(ActionEvent e) {
+        					if (aktuellesBild != null) {
+        						Class<?> c = null;
+        			   			try {
+        			   				c = Class.forName(x[0]);
+        			   			} catch (ClassNotFoundException ex) {
+        			   				System.err.println("Klasse existiert nicht.");
+        			   			}
+        			   			if (c != null) {
+        			   				IFilter f = null;
+        			   				Constructor<?> ctor = null;
+        			   				Class<?>[] paramTypes = new Class<?>[] {Farbbild.class};
+        			   				try {
+        			   					ctor = c.getDeclaredConstructor(paramTypes);
+        			   				} catch (Exception ex) {
+        			   					System.err.println("Konstruktor existiert nicht.");
+        			  				}
+        			   				if (ctor != null) {
+        			   					try {
+        			   						f = (IFilter) ctor.newInstance(aktuellesBild);
+        			   					} catch (Exception ex) {
+        			   						System.err.println("Fehler.");
+        			   					}
+        			   					if (f != null) {
+        			   						f.anwenden();
+        			   						fenster.repaint();
+        			   					}
+        			   				}
+        			   			}
+        					}
+        				}
+        			});
+        			menue.add(eintrag);
+        		}
+        	}
+        }        
     }
 }
