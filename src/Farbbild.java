@@ -6,7 +6,7 @@ import javax.swing.*;
  * Farbbild ist eine Klasse, die Farbbilder mit einer bequemen
  * Schnittstelle definiert.
  * 
- * @author  Michael Kölling und David J. Barnes
+ * @author  Michael Koelling und David J. Barnes
  * @version 1.1
  */
 public class Farbbild extends BufferedImage
@@ -22,7 +22,7 @@ public class Farbbild extends BufferedImage
     }
 
     /**
-     * Erzeuge ein Farbbild mit der angegebenen Größe mit
+     * Erzeuge ein Farbbild mit der angegebenen Groesse mit
      * undefiniertem Inhalt.
      * @param breite die Breite des Bildes.
      * @param hoehe die Hoehe des Bildes.

@@ -5,36 +5,36 @@ import java.awt.image.*;
 /**
  * Bildflaeche ist eine Swing-Komponente, die ein Farbbild anzeigen
  * kann. Sie ist konstruiert als eine Subklasse von JComponent und  
- * bietet die zusätzliche Funktionalität, dass ein eingetragenes 
- * Farbbild an der Oberfläche dieser Komponente angezeigt wird. 
+ * bietet die zusaetzliche Funktionalitaet, dass ein eingetragenes 
+ * Farbbild an der Oberflaeche dieser Komponente angezeigt wird. 
  * 
- * @author  Michael Kölling und David J. Barnes
+ * @author  Michael Koelling und David J. Barnes
  * @version 1.0
  */
 public class Bildflaeche extends JComponent
 {
     private static final long serialVersionUID = 20060330L;
 
-    // Die aktuelle Breite und Höhe dieser Bildfläche
+    // Die aktuelle Breite und Hoehe dieser Bildflaeche
     private int breite, hoehe;
 
     // Ein interner Bildpuffer, der zum Zeichnen verwendet wird.
-    // Wenn die Fläche tatsächlich angezeigt werden soll, wird dieser
+    // Wenn die Flaeche tatsaechlich angezeigt werden soll, wird dieser
     // Puffer auf den Bildschirm kopiert.
     private Farbbild bild;
 
     /**
-     * Erzeuge eine neue, leere Bildfläche.
+     * Erzeuge eine neue, leere Bildflaeche.
      */
     public Bildflaeche()
     {
-        breite = 360;    // beliebig gewählte Größe 
+        breite = 360;    // beliebig gewaehlte Groessee 
         hoehe = 240;
         bild = null;
     }
 
     /**
-     * Setze das Bild, das diese Bildfläche anzeigen soll.
+     * Setze das Bild, das diese Bildflaeche anzeigen soll.
      * 
      * @param bild das anzuzeigende Bild.
      */
@@ -49,7 +49,7 @@ public class Bildflaeche extends JComponent
     }
     
     /**
-     * Lösche die Bildfläche.
+     * Loesche die Bildflaeche.
      */
     public void loeschen()
     {
@@ -63,11 +63,11 @@ public class Bildflaeche extends JComponent
     // Superklassen geerbt wurden.
     
     /**
-     * Teile dem Layout-Manager mit, wie groß diese Komponente sein soll.
+     * Teile dem Layout-Manager mit, wie gross diese Komponente sein soll.
      * (Diese Methode wird vom Layout-Manager aufgerufen, um
-     * die Komponenten geeignet platzieren zu können.)
+     * die Komponenten geeignet platzieren zu koennen.)
      * 
-     * @return Die bevorzugte Größe (als Dimension) dieser Komponente.
+     * @return Die bevorzugte Groesse (als Dimension) dieser Komponente.
      */
     public Dimension getPreferredSize()
     {

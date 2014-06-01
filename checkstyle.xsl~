@@ -1,0 +1,77 @@
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+    xmlns:lxslt="http://xml.apache.org/xslt"
+    xmlns:redirect="org.apache.xalan.lib.Redirect"
+    extension-element-prefixes="redirect">
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+    <xsl:output method="html" indent="yes" encoding="US-ASCII"/>
+    <xsl:decimal-format decimal-separator="." grouping-separator="," />
+
+    <xsl:param name="output.dir" select="'.'"/>
+    <xsl:param name="basedir" select="'.'"/>
+
+    <xsl:template match="checkstyle">
+        <!-- create the index.html -->
+        <redirect:write file="{$output.dir}/index.html">
+            <xsl:call-template name="index.html"/>
+        </redirect:write>
+
+        <!-- create the stylesheet.css -->
+        <redirect:write file="{$output.dir}/stylesheet.css">
+            <xsl:call-template name="stylesheet.css"/>
+        </redirect:write>
+
+        <!-- create the overview-summary.html at the root -->
+        <redirect:write file="{$output.dir}/overview-frame.html">
+            <xsl:apply-templates select="." mode="overview"/>
+        </redirect:write>
+
+        <!-- create the all-classes.html at the root -->
+        <redirect:write file="{$output.dir}/allclasses-frame.html">
+            <xsl:apply-templates select="." mode="all.classes"/>
+        </redirect:write>
+
+        <!-- process all files -->
+        <xsl:apply-templates select="file[count(error) != 0]"/>
+    </xsl:template>
+
+    <xsl:template name="index.html">
+        <html>
+            <head>
+                <title>CheckStyle Audit
+            </head>
+            <frameset cols="20%,80%">
+                <frame src="allclasses-frame.html" name="fileListFrame"/>
+                <frame src="overview-frame.html" name="fileFrame"/>
+            </frameset>
+            <noframes>
+                <h2>Frame Alert
+                <p>
+                    This document is designed to be viewed using the frames feature.
+                    If you see this message, you are using a non-frame-capable web client.
+                </p>
+            </noframes>
+        </html>
+    </xsl:template>
+
+    <xsl:template name="pageHeader">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td class="text-align:right">
+

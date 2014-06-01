@@ -17,7 +17,7 @@ import java.lang.reflect.Constructor;
  * 
  * Erzeugen Sie ein Exemplar dieser Klasse, um die Anwendung zu starten.
  * 
- * @author Michael Kölling und David J. Barnes 
+ * @author Michael Koelling und David J. Barnes 
  * @version 1.0
  */
 public class Bildbetrachter
@@ -42,10 +42,10 @@ public class Bildbetrachter
         fensterErzeugen();
     }
 
-    // ---- Implementierung der Menü-Funktionen ----
+    // ---- Implementierung der Menue-Funktionen ----
     
     /**
-     * 'Datei oeffnen'-Funktion: Öffnet einen Dateiauswahldialog zur 
+     * 'Datei oeffnen'-Funktion: oeffnet einen Dateiauswahldialog zur 
      * Auswahl einer Bilddatei und zeigt das selektierte Bild an.
      */
     private void dateiOeffnen()
@@ -58,9 +58,9 @@ public class Bildbetrachter
         File selektierteDatei = dateiauswahldialog.getSelectedFile();
         aktuellesBild = BilddateiManager.ladeBild(selektierteDatei);
         
-        if(aktuellesBild == null) {   // Bilddatei nicht im gültigen Format
+        if(aktuellesBild == null) {   // Bilddatei nicht im gueltigen Format
             JOptionPane.showMessageDialog(fenster,
-                    "Die Datei hat keines der unterstützten Formate.",
+                    "Die Datei hat keines der unterstuetzten Formate.",
                     "Fehler beim Bildladen",
                     JOptionPane.ERROR_MESSAGE);
             return;
@@ -73,7 +73,7 @@ public class Bildbetrachter
     }
 
     /**
-     * 'Schliessen'-Funktion: Schließt das aktuelle Bild.
+     * 'Schliessen'-Funktion: Schliesst das aktuelle Bild.
      */
     private void schliessen()
     {
@@ -94,11 +94,11 @@ public class Bildbetrachter
     // ---- Hilfsmethoden ----
 
     /**
-     * Zeigt den Dateinamen des aktuellen Bildes auf dem Label für den
+     * Zeigt den Dateinamen des aktuellen Bildes auf dem Label fuer den
      * Dateinamen.
      * Der Parameter sollte 'null' sein, wenn kein Bild geladen ist. 
      * 
-     * @param dateiname  Der anzuzeigende Dateiname, oder null für 'keine Datei'.
+     * @param dateiname  Der anzuzeigende Dateiname, oder null fuer 'keine Datei'.
      */
     private void dateinameAnzeigen(String dateiname)
     {
@@ -134,14 +134,14 @@ public class Bildbetrachter
         
         Container contentPane = fenster.getContentPane();
         
-        // Ein Layout mit hübschen Abständen definieren
+        // Ein Layout mit huebschen Abstaenden definieren
         contentPane.setLayout(new BorderLayout(6, 6));
         
-        // Die Bildfläche in der Mitte erzeugen
+        // Die Bildflaeche in der Mitte erzeugen
         bildflaeche = new Bildflaeche();
         contentPane.add(bildflaeche, BorderLayout.CENTER);
 
-        // Zwei Labels oben und unten für den Dateinamen und Statusmeldungen
+        // Zwei Labels oben und unten fuer den Dateinamen und Statusmeldungen
         dateinameLabel = new JLabel();
         contentPane.add(dateinameLabel, BorderLayout.NORTH);
 
@@ -159,8 +159,8 @@ public class Bildbetrachter
     }
     
     /**
-     * Die Menüzeile des Hauptfensters erzeugen.
-     * @param fenster  Das Fenster, in das die Menüzeile eingefügt werden soll.
+     * Die Menuezeile des Hauptfensters erzeugen.
+     * @param fenster  Das Fenster, in das die Menuezeile eingefuegt werden soll.
      */
     private void menuezeileErzeugen(final JFrame fenster)
     {
@@ -173,18 +173,18 @@ public class Bildbetrachter
         JMenu menue;
         JMenuItem eintrag;
         
-        // Das Datei-Menü erzeugen
+        // Das Datei-Menï¿½ erzeugen
         menue = new JMenu("Datei");
         menuezeile.add(menue);
         
-        eintrag = new JMenuItem("Öffnen...");
+        eintrag = new JMenuItem("Oeffnen...");
             eintrag.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, SHORTCUT_MASK));
             eintrag.addActionListener(new ActionListener() {
                                public void actionPerformed(ActionEvent e) { dateiOeffnen(); }
                            });
         menue.add(eintrag);
 
-        eintrag = new JMenuItem("Schließen");
+        eintrag = new JMenuItem("Schliessen");
             eintrag.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_W, SHORTCUT_MASK));
             eintrag.addActionListener(new ActionListener() {
                                public void actionPerformed(ActionEvent e) { schliessen(); }
@@ -200,10 +200,10 @@ public class Bildbetrachter
         menue.add(eintrag);
 
 
-        // Das Filter-Menü erzeugen
+        // Das Filter-Menue erzeugen
         menue = new JMenu("Filter");
         menuezeile.add(menue);
-        File file = new File("/Users/kristoffer/Documents/blatt7/bin");
+        File file = new File("/home/niklas/workspace/PM7/bin");
         String[] classes = file.list();
         
         for (String st: classes) {
