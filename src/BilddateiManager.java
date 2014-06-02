@@ -1,6 +1,11 @@
+import java.awt.Color;
 import java.awt.image.*;
+
 import javax.imageio.*;
+
 import java.io.*;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Logger;
 
 /**
  * BilddateiManager ist eine kleine Hilfsklasse mit statischen Methoden
@@ -18,7 +23,8 @@ public class BilddateiManager
 	// Eine Konstante, die das Format fuer geschriebene Dateien festgelegt.
 	// Zul�ssige Formate sind "jpg" und "png".
     private static final String BILDFORMAT = "jpg";
-    
+    private static final Logger LOGGER = Logger.getLogger(BilddateiManager.class.getName());
+    private static final ConsoleHandler CH = new ConsoleHandler();
     /**
      * Lies eine Bilddatei ein und liefere sie als ein Bild zurueck.
      * Diese Methode kann Dateien im JPG- und im PNG-Format lesen.
@@ -38,6 +44,21 @@ public class BilddateiManager
                 // Bild konnte nicht geladen werden - vermutlich falsches Format
                 return null;
             }
+            LOGGER.addHandler(CH);
+            int w = bild.getWidth();
+            int h = bild.getHeight();
+            int ins = w * h;
+            int gray = 0;
+            for(int x=0; x < w; x++){
+            	for(int y=0; y < h; y++){
+            		int rgb = bild.getRGB(x,y);
+            		
+            		Color c = new Color(rgb);
+            		gray += (c.getRed() + c.getBlue() + c.getGreen()) / 3;
+            	}
+            }
+            int mGray = gray / ins;
+            LOGGER.info("Bild geladen..." + "\n" + "Groeße : " + w + " x " + h +"px" + "\n" + "mittlerer Grauwert: " + mGray);
             return new Farbbild(bild);
         }
         catch(IOException exc) {

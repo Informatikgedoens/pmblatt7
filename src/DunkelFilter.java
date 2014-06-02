@@ -1,8 +1,13 @@
 
 import java.awt.image.BufferedImage;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Logger;
 
 
 public class DunkelFilter extends Farbbild implements IFilter {
+	
+	private static final Logger LOGGER = Logger.getLogger(DunkelFilter.class.getName());
+	private static final ConsoleHandler CH = new ConsoleHandler();
 	
 	public DunkelFilter(Farbbild aktuellesBild) {
 		super(aktuellesBild);
@@ -12,6 +17,10 @@ public class DunkelFilter extends Farbbild implements IFilter {
 	private Farbbild aktuellesBild;
 	
 	public void anwenden() {
+		OwnFormatter f = new OwnFormatter();
+		CH.setFormatter(f);
+		LOGGER.addHandler(CH);
+		LOGGER.info("DunkelFilter angewendet!");
 		int hoehe = getHeight();
         int breite = getWidth();
         

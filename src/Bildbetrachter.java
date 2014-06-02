@@ -1,14 +1,37 @@
-import java.awt.*;
-import java.awt.event.*;
-import java.awt.image.*;
-
-import javax.swing.*;
-
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.File;
-import java.util.ArrayList;
-
-import java.lang.Class;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Constructor;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CreationHelper;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
+
 
 /**
  * Bildbetrachter ist die Hauptklasse der Bildbetrachter-Anwendung. Sie
@@ -25,7 +48,9 @@ public class Bildbetrachter
     // statische Datenfelder (Klassenkonstanten und -variablen)
     private static final String VERSION = "Version 1.0";
     private static JFileChooser dateiauswahldialog = new JFileChooser(System.getProperty("user.dir"));
-
+    private static final Logger LOGGER = Logger.getLogger(Bildbetrachter.class.getName());
+    private static final ConsoleHandler CH = new ConsoleHandler();
+    
     // Datenfelder
     private JFrame fenster;
     private Bildflaeche bildflaeche;
@@ -40,6 +65,38 @@ public class Bildbetrachter
     {
         aktuellesBild = null;
         fensterErzeugen();
+        try {
+			loggerAnlegen();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+    
+    public void loggerAnlegen() throws IOException {
+    	OwnFormatter x = new OwnFormatter();
+    	CH.setFormatter(x);
+    	
+    	LOGGER.addHandler(CH);
+    	LOGGER.log(Level.FINEST, "logging finest");
+    	LOGGER.setLevel(Level.FINEST);
+    	
+    	//Workbook anlegen
+    	Workbook wb = new HSSFWorkbook();
+        
+        
+        //create a sheet
+        Sheet sheet1 = wb.createSheet("Mein Sheet");
+        CreationHelper createHelper = wb.getCreationHelper();
+        
+        Row row = sheet1.createRow(0);
+        Cell cell = row.createCell((short)0);
+        cell.setCellType(HSSFCell.CELL_TYPE_STRING);
+        
+        FileOutputStream fileOut = new FileOutputStream("workbook.xls");
+        wb.write(fileOut);
+        fileOut.close();
+    	
     }
 
     // ---- Implementierung der Menue-Funktionen ----
@@ -80,6 +137,7 @@ public class Bildbetrachter
         aktuellesBild = null;
         bildflaeche.loeschen();
         dateinameAnzeigen(null);
+        LOGGER.info("Bild geschlossen!");
     }
     
     
@@ -88,6 +146,7 @@ public class Bildbetrachter
      */
     private void beenden()
     {
+    	LOGGER.info("Programm verlassen.");
         System.exit(0);
     }
     
@@ -173,7 +232,7 @@ public class Bildbetrachter
         JMenu menue;
         JMenuItem eintrag;
         
-        // Das Datei-Men� erzeugen
+        // Das Datei-Menue erzeugen + Onclick options 
         menue = new JMenu("Datei");
         menuezeile.add(menue);
         
@@ -213,7 +272,7 @@ public class Bildbetrachter
         			String[] y = x[0].split("Filter");
         			eintrag = new JMenuItem(y[0]);
         			eintrag.addActionListener(new ActionListener() {
-        				public void actionPerformed(ActionEvent e) {
+        				public void actionPerformed(ActionEvent e) { //on click
         					if (aktuellesBild != null) {
         						Class<?> c = null;
         			   			try {
