@@ -11,22 +11,22 @@ import java.util.logging.Logger;
  * BilddateiManager ist eine kleine Hilfsklasse mit statischen Methoden
  * zum Laden und Speichern von Bildern.
  * 
- * Zu lesende Dateien koennen im JPG- oder im PNG-Format vorliegen.
+ * Zu lesende Dateien können im JPG- oder im PNG-Format vorliegen.
  * Das Format von Dateien, die von dieser Klasse geschrieben werden,
  * wird durch die Konstante BILDFORMAT festgelegt. 
  * 
- * @author Michael Koelling und David J Barnes 
+ * @author Michael Kölling und David J Barnes 
  * @version 2.0
  */
 public class BilddateiManager
 {
-	// Eine Konstante, die das Format fuer geschriebene Dateien festgelegt.
-	// Zulï¿½ssige Formate sind "jpg" und "png".
+	// Eine Konstante, die das Format für geschriebene Dateien festgelegt.
+	// Zulässige Formate sind "jpg" und "png".
     private static final String BILDFORMAT = "jpg";
     private static final Logger LOGGER = Logger.getLogger(BilddateiManager.class.getName());
     private static final ConsoleHandler CH = new ConsoleHandler();
     /**
-     * Lies eine Bilddatei ein und liefere sie als ein Bild zurueck.
+     * Lies eine Bilddatei ein und liefere sie als ein Bild zurück.
      * Diese Methode kann Dateien im JPG- und im PNG-Format lesen.
      * Bei Problemen (etwa, wenn die Datei nicht existiert oder ein nicht
      * lesbares Format hat oder es einen sonstigen Lesefehler gibt)
@@ -38,6 +38,7 @@ public class BilddateiManager
      */
     public static Farbbild ladeBild(File bilddatei)
     {
+<<<<<<< HEAD
         try {
             BufferedImage bild = ImageIO.read(bilddatei);
             if(bild == null || (bild.getWidth(null) < 0)) {
@@ -64,6 +65,23 @@ public class BilddateiManager
         catch(IOException exc) {
             return null;
         }
+=======
+    	if (bilddatei != null) {
+    		try {
+    			BufferedImage bild = ImageIO.read(bilddatei);
+    			if(bild == null || (bild.getWidth(null) < 0)) {
+    				// Bild konnte nicht geladen werden - vermutlich falsches Format
+    				return null;
+    			}
+    			return new Farbbild(bild);
+    		}
+    		catch(IOException exc) {
+    			return null;
+    		}
+    	} else {
+    		return null;
+    	}
+>>>>>>> e2004955aa603b2b636084d203fb83c7a8bd00eb
     }
 
     /**

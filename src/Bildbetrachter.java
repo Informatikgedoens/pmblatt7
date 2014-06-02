@@ -40,7 +40,7 @@ import org.apache.poi.ss.usermodel.Workbook;
  * 
  * Erzeugen Sie ein Exemplar dieser Klasse, um die Anwendung zu starten.
  * 
- * @author Michael Koelling und David J. Barnes 
+ * @author Michael Kölling und David J. Barnes 
  * @version 1.0
  */
 public class Bildbetrachter
@@ -99,10 +99,10 @@ public class Bildbetrachter
     	
     }
 
-    // ---- Implementierung der Menue-Funktionen ----
+    // ---- Implementierung der Menü-Funktionen ----
     
     /**
-     * 'Datei oeffnen'-Funktion: oeffnet einen Dateiauswahldialog zur 
+     * 'Datei oeffnen'-Funktion: Öffnet einen Dateiauswahldialog zur 
      * Auswahl einer Bilddatei und zeigt das selektierte Bild an.
      */
     private void dateiOeffnen()
@@ -115,9 +115,9 @@ public class Bildbetrachter
         File selektierteDatei = dateiauswahldialog.getSelectedFile();
         aktuellesBild = BilddateiManager.ladeBild(selektierteDatei);
         
-        if(aktuellesBild == null) {   // Bilddatei nicht im gueltigen Format
+        if(aktuellesBild == null) {   // Bilddatei nicht im gültigen Format
             JOptionPane.showMessageDialog(fenster,
-                    "Die Datei hat keines der unterstuetzten Formate.",
+                    "Die Datei hat keines der unterstützten Formate.",
                     "Fehler beim Bildladen",
                     JOptionPane.ERROR_MESSAGE);
             return;
@@ -130,7 +130,7 @@ public class Bildbetrachter
     }
 
     /**
-     * 'Schliessen'-Funktion: Schliesst das aktuelle Bild.
+     * 'Schliessen'-Funktion: Schließt das aktuelle Bild.
      */
     private void schliessen()
     {
@@ -153,11 +153,11 @@ public class Bildbetrachter
     // ---- Hilfsmethoden ----
 
     /**
-     * Zeigt den Dateinamen des aktuellen Bildes auf dem Label fuer den
+     * Zeigt den Dateinamen des aktuellen Bildes auf dem Label für den
      * Dateinamen.
      * Der Parameter sollte 'null' sein, wenn kein Bild geladen ist. 
      * 
-     * @param dateiname  Der anzuzeigende Dateiname, oder null fuer 'keine Datei'.
+     * @param dateiname  Der anzuzeigende Dateiname, oder null für 'keine Datei'.
      */
     private void dateinameAnzeigen(String dateiname)
     {
@@ -193,14 +193,14 @@ public class Bildbetrachter
         
         Container contentPane = fenster.getContentPane();
         
-        // Ein Layout mit huebschen Abstaenden definieren
+        // Ein Layout mit hübschen Abständen definieren
         contentPane.setLayout(new BorderLayout(6, 6));
         
-        // Die Bildflaeche in der Mitte erzeugen
+        // Die Bildfläche in der Mitte erzeugen
         bildflaeche = new Bildflaeche();
         contentPane.add(bildflaeche, BorderLayout.CENTER);
 
-        // Zwei Labels oben und unten fuer den Dateinamen und Statusmeldungen
+        // Zwei Labels oben und unten für den Dateinamen und Statusmeldungen
         dateinameLabel = new JLabel();
         contentPane.add(dateinameLabel, BorderLayout.NORTH);
 
@@ -218,8 +218,8 @@ public class Bildbetrachter
     }
     
     /**
-     * Die Menuezeile des Hauptfensters erzeugen.
-     * @param fenster  Das Fenster, in das die Menuezeile eingefuegt werden soll.
+     * Die Menüzeile des Hauptfensters erzeugen.
+     * @param fenster  Das Fenster, in das die Menüzeile eingefügt werden soll.
      */
     private void menuezeileErzeugen(final JFrame fenster)
     {
@@ -232,18 +232,22 @@ public class Bildbetrachter
         JMenu menue;
         JMenuItem eintrag;
         
+<<<<<<< HEAD
         // Das Datei-Menue erzeugen + Onclick options 
+=======
+        // Das Datei-Menü erzeugen
+>>>>>>> e2004955aa603b2b636084d203fb83c7a8bd00eb
         menue = new JMenu("Datei");
         menuezeile.add(menue);
         
-        eintrag = new JMenuItem("Oeffnen...");
+        eintrag = new JMenuItem("Öffnen...");
             eintrag.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, SHORTCUT_MASK));
             eintrag.addActionListener(new ActionListener() {
                                public void actionPerformed(ActionEvent e) { dateiOeffnen(); }
                            });
         menue.add(eintrag);
 
-        eintrag = new JMenuItem("Schliessen");
+        eintrag = new JMenuItem("Schließen");
             eintrag.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_W, SHORTCUT_MASK));
             eintrag.addActionListener(new ActionListener() {
                                public void actionPerformed(ActionEvent e) { schliessen(); }
@@ -259,10 +263,10 @@ public class Bildbetrachter
         menue.add(eintrag);
 
 
-        // Das Filter-Menue erzeugen
+        // Das Filter-Menü erzeugen
         menue = new JMenu("Filter");
         menuezeile.add(menue);
-        File file = new File("/home/niklas/workspace/PM7/bin");
+        File file = new File("/Users/kristoffer/Documents/blatt7/bin");
         String[] classes = file.list();
         
         for (String st: classes) {
@@ -282,23 +286,14 @@ public class Bildbetrachter
         			   			}
         			   			if (c != null) {
         			   				IFilter f = null;
-        			   				Constructor<?> ctor = null;
-        			   				Class<?>[] paramTypes = new Class<?>[] {Farbbild.class};
         			   				try {
-        			   					ctor = c.getDeclaredConstructor(paramTypes);
+        			   					f = (IFilter) c.newInstance();
         			   				} catch (Exception ex) {
-        			   					System.err.println("Konstruktor existiert nicht.");
-        			  				}
-        			   				if (ctor != null) {
-        			   					try {
-        			   						f = (IFilter) ctor.newInstance(aktuellesBild);
-        			   					} catch (Exception ex) {
-        			   						System.err.println("Fehler.");
-        			   					}
-        			   					if (f != null) {
-        			   						f.anwenden();
-        			   						fenster.repaint();
-        			   					}
+        			   					System.err.println("Fehler.");
+        			   				}
+        			   				if (f != null) {
+        			   					f.anwenden(aktuellesBild);
+        			   					fenster.repaint();
         			   				}
         			   			}
         					}

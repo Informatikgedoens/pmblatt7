@@ -4,8 +4,9 @@ import java.util.logging.ConsoleHandler;
 import java.util.logging.Logger;
 
 
-public class DunkelFilter extends Farbbild implements IFilter {
+public class DunkelFilter implements IFilter {
 	
+<<<<<<< HEAD
 	private static final Logger LOGGER = Logger.getLogger(DunkelFilter.class.getName());
 	private static final ConsoleHandler CH = new ConsoleHandler();
 	
@@ -32,6 +33,21 @@ public class DunkelFilter extends Farbbild implements IFilter {
             }
         }
 
+=======
+	public boolean anwenden(Farbbild aktuellesBild) {
+		if (aktuellesBild != null) {
+			int hoehe = aktuellesBild.getHeight();
+			int breite = aktuellesBild.getWidth();
+			for(int y = 0; y < hoehe; y++) {
+				for(int x = 0; x < breite; x++) {
+					aktuellesBild.setzePunktfarbe(x, y, aktuellesBild.gibPunktfarbe(x, y).darker());
+				}
+			}
+			return true;
+		} else {
+			return false;
+		}
+>>>>>>> e2004955aa603b2b636084d203fb83c7a8bd00eb
 	}
 
 }

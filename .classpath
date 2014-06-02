@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
@@ -5,3 +6,13 @@
 	<classpathentry kind="lib" path="/home/niklas/workspace/PM7/POI/poi-3.10-FINAL/poi-3.10-FINAL-20140208.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="sBST"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
+>>>>>>> e2004955aa603b2b636084d203fb83c7a8bd00eb
