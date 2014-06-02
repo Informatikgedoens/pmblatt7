@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="/home/niklas/workspace/PM7/src/AufhellenFilter.java">
+<error line="2" column="8" severity="warning" message="Nicht benutztes import - java.awt.image.BufferedImage." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="4" column="8" severity="warning" message="Nicht benutztes import - javax.swing.JFrame." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="11" column="37" severity="warning" message="&apos;aktuellesBild&apos; verbirgt ein Feld." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+<error line="23" column="16" severity="warning" message="Nach &apos;for&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="24" column="20" severity="warning" message="Nach &apos;for&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="25" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/home/niklas/workspace/PM7/src/Bildbetrachter.java">
+<error line="1" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - java.awt.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="2" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - java.awt.event.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="3" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - java.awt.image.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="5" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - javax.swing.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="8" column="8" severity="warning" message="Nicht benutztes import - java.util.ArrayList." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="10" column="1" severity="warning" message="Überflüssiges import aus dem Package java.lang - java.lang.Class." source="com.puppycrawl.tools.checkstyle.checks.imports.RedundantImportCheck"/>
+<error line="23" column="1" severity="warning" message="Class Data Abstraction Coupling is 10 (max allowed is 7) classes [ActionListener, Bildflaeche, BorderLayout, File, JFileChooser, JFrame, JLabel, JMenu, JMenuBar, JMenuItem]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+<error line="24" column="1" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="27" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="40" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="52" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="55" column="11" severity="warning" message="Nach &apos;if&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="61" column="11" severity="warning" message="Nach &apos;if&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="79" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="90" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="101" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="104" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="105" column="11" severity="warning" message="Nach &apos;if&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="107" column="9" severity="warning" message="&apos;}&apos; sollte in derselben Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+<error line="120" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="131" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="138" column="48" severity="warning" message="&apos;6&apos; sollte durch eine Konstante definiert sein." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="138" column="51" severity="warning" message="&apos;6&apos; sollte durch eine Konstante definiert sein." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="157" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="157" column="36" severity="warning" message="Vor &apos;/&apos; befindet sich kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="157" column="37" severity="warning" message="Nach &apos;/&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="157" column="59" severity="warning" message="Vor &apos;/&apos; befindet sich kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="157" column="60" severity="warning" message="Nach &apos;/&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="157" column="71" severity="warning" message="Vor &apos;/&apos; befindet sich kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="157" column="72" severity="warning" message="Nach &apos;/&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="157" column="95" severity="warning" message="Vor &apos;/&apos; befindet sich kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="157" column="96" severity="warning" message="Nach &apos;/&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="163" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="165" column="5" severity="warning" message="Methode ist 87 Zeilen lang, erlaubt sind höchstens 60." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+<error line="165" column="5" severity="warning" message="NCSS for this method is 59 (max allowed is 40)." source="com.puppycrawl.tools.checkstyle.checks.metrics.JavaNCSSCheck"/>
+<error line="165" column="50" severity="warning" message="&apos;fenster&apos; verbirgt ein Feld." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+<error line="166" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="167" column="19" severity="warning" message="&apos;SHORTCUT_MASK&apos; entspricht nicht dem Muster &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.LocalFinalVariableNameCheck"/>
+<error line="181" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="183" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="188" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="190" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="196" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="198" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="222" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="227" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="229" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="231" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="233" column="37" severity="warning" message="Verschachtelungstiefe von if-else ist 4 (Obergrenze ist 3)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="235" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="239" column="41" severity="warning" message="Verschachtelungstiefe von if-else ist 5 (Obergrenze ist 3)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+</file>
+<file name="/home/niklas/workspace/PM7/src/BilddateiManager.java">
+<error line="1" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - java.awt.image.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="2" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - javax.imageio.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="3" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - java.io.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="16" column="1" severity="warning" message="Utility classes should not have a public or default constructor." source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
+<error line="17" column="1" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="34" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="37" column="15" severity="warning" message="Nach &apos;if&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="42" column="9" severity="warning" message="&apos;}&apos; sollte in derselben Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+<error line="43" column="14" severity="warning" message="Nach &apos;catch&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="56" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="59" column="9" severity="warning" message="&apos;}&apos; sollte in derselben Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+<error line="60" column="14" severity="warning" message="Nach &apos;catch&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+</file>
+<file name="/home/niklas/workspace/PM7/src/Bildflaeche.java">
+<error line="1" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - java.awt.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="2" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - javax.swing.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="3" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - java.awt.image.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="15" column="1" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="30" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="31" column="18" severity="warning" message="&apos;360&apos; sollte durch eine Konstante definiert sein." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="32" column="17" severity="warning" message="&apos;240&apos; sollte durch eine Konstante definiert sein." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="41" column="36" severity="warning" message="&apos;bild&apos; verbirgt ein Feld." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+<error line="42" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="43" column="11" severity="warning" message="Nach &apos;if&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="55" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="73" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="87" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="90" column="11" severity="warning" message="Nach &apos;if&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+</file>
+<file name="/home/niklas/workspace/PM7/src/DunkelFilter.java">
+<error line="2" column="8" severity="warning" message="Nicht benutztes import - java.awt.image.BufferedImage." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="7" column="34" severity="warning" message="&apos;aktuellesBild&apos; verbirgt ein Feld." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+<error line="12" column="5" severity="warning" message="Instanzvariablendefinition in falscher Reihenfolge." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="20" column="12" severity="warning" message="Nach &apos;for&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="21" column="16" severity="warning" message="Nach &apos;for&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="22" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/home/niklas/workspace/PM7/src/Farbbild.java">
+<error line="1" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - java.awt.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="2" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - java.awt.image.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="3" severity="warning" message="Die Form &apos;.*&apos; für import-Anweisungen sollte vermieden werden - javax.swing.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="13" column="1" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="19" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="31" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="43" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="55" column="5" severity="warning" message="&apos;{&apos; sollte in der vorhergehenden Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+</file>
+<file name="/home/niklas/workspace/PM7/src/IFilter.java">
+<error line="5" column="19" severity="warning" message="&apos;aktuellesBild&apos; entspricht nicht dem Muster &apos;^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ConstantNameCheck"/>
+<error line="5" column="39" severity="warning" message="Vor &apos;;&apos; befindet sich ein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.NoWhitespaceBeforeCheck"/>
+<error line="7" column="5" severity="warning" message="Überflüssiger Modifier &apos;public&apos;." source="com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck"/>
+</file>
+<file name="/home/niklas/workspace/PM7/src/Main.java">
+<error line="2" column="1" severity="warning" message="Utility classes should not have a public or default constructor." source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
+</file>
+<file name="/home/niklas/workspace/PM7/src/SchwellwertFilter.java">
+<error line="3" column="8" severity="warning" message="Nicht benutztes import - java.awt.image.BufferedImage." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="10" column="39" severity="warning" message="&apos;aktuellesBild&apos; verbirgt ein Feld." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+<error line="19" column="16" severity="warning" message="Nach &apos;for&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="20" column="20" severity="warning" message="Nach &apos;for&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="22" severity="warning" message="Zeile länger als 80 Zeichen" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="22" column="94" severity="warning" message="&apos;3&apos; sollte durch eine Konstante definiert sein." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="23" column="23" severity="warning" message="Nach &apos;if&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="23" column="38" severity="warning" message="&apos;85&apos; sollte durch eine Konstante definiert sein." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="25" column="21" severity="warning" message="&apos;}&apos; sollte in derselben Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+<error line="26" column="28" severity="warning" message="Nach &apos;if&apos; folgt kein Leerzeichen." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="26" column="43" severity="warning" message="&apos;170&apos; sollte durch eine Konstante definiert sein." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="28" column="21" severity="warning" message="&apos;}&apos; sollte in derselben Zeile stehen." source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+</file>
+<file name="/home/niklas/workspace/PM7/src/AufhellenFilter.java">
+</file>
+<file name="/home/niklas/workspace/PM7/src/Bildbetrachter.java">
+</file>
+<file name="/home/niklas/workspace/PM7/src/BilddateiManager.java">
+</file>
+<file name="/home/niklas/workspace/PM7/src/Bildflaeche.java">
+</file>
+<file name="/home/niklas/workspace/PM7/src/DunkelFilter.java">
+</file>
+<file name="/home/niklas/workspace/PM7/src/Farbbild.java">
+</file>
+<file name="/home/niklas/workspace/PM7/src/IFilter.java">
+</file>
+<file name="/home/niklas/workspace/PM7/src/Main.java">
+</file>
+<file name="/home/niklas/workspace/PM7/src/SchwellwertFilter.java">
+</file>
+</checkstyle>
